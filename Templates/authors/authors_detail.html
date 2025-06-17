@@ -1,0 +1,16 @@
+<h2>{{ author.name }}</h2>
+<p>Age: {{ author.age }}</p>
+<p>Gender: {{ author.gender }}</p>
+
+<h3>Books by {{ author.name }}</h3>
+<ul>
+    {% for book in books %}
+        <li>{{ book.title }}</li>
+    {% empty %}
+        <li>No books found.</li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'author_update' author.pk %}">Edit Author</a> |
+<a href="{% url 'author_delete' author.pk %}">Delete Author</a> |
+<a href="{% url 'author_list' %}">Back to Author List</a>

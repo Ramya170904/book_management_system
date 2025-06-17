@@ -1,0 +1,13 @@
+<h1>Authors</h1>
+<a href="{% url 'author_create' %}">Add New Author</a>
+
+<ul>
+    {% for author in authors %}
+        <li>
+            {{ author.name }} |
+            <a href="{% url 'author_update' author.pk %}">Edit</a> |
+            <a href="{% url 'author_delete' author.pk %}">Delete</a>
+        </li>
+    {% endfor %}
+</ul>
+<a href="{% url 'home' %}">Back to Home</a>
